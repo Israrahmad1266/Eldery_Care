@@ -1,11 +1,8 @@
-import 'package:doctor_project/HomePage%20Menu/home_menu.dart';
-import 'package:doctor_project/Home_Page/home_page.dart';
+import 'package:doctor_project/Home_Page/login_page.dart';
 import 'package:doctor_project/Register%20Page/register_page.dart';
-import 'package:doctor_project/Subscription_Page/subscription_page.dart';
-import 'package:doctor_project/screen/splash_screen.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:get/get.dart';
 
 class VerificationScreen extends StatelessWidget {
   const VerificationScreen({super.key});
@@ -13,25 +10,25 @@ class VerificationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff24142e),
+      backgroundColor: const Color(0xff24142e),
       body: SingleChildScrollView(
         child: Stack(
           children: [
             Column(
               children: [
                 Container(
-                  margin: EdgeInsets.only(top: 120),
+                  margin: const EdgeInsets.only(top: 120),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(right: 90, left: 20),
+                  padding: const EdgeInsets.only(right: 90, left: 20),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Container(
+                      SizedBox(
                         height: 45,
                         child: FloatingActionButton(
-                          backgroundColor: Color(0xff7D4292),
-                          child: Icon(Icons.arrow_back),
+                          backgroundColor: const Color(0xff7D4292),
+                          child: const Icon(Icons.arrow_back),
                           onPressed: () {
                             Navigator.push(
                                 context,
@@ -45,20 +42,20 @@ class VerificationScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
-                Text(
+                const Text(
                   'Verify your number',
                   style: TextStyle(
                       fontSize: 22,
                       color: Colors.white,
                       fontWeight: FontWeight.w400),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
-                Text(
+                const Text(
                   'Enter 4 - digit verification code sent to your phone number +9882838958 edit',
                   style: TextStyle(
                     fontSize: 17,
@@ -67,7 +64,7 @@ class VerificationScreen extends StatelessWidget {
                   ),
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Center(
@@ -91,7 +88,7 @@ class VerificationScreen extends StatelessWidget {
                           cursorHeight: 25,
                           cursorWidth: 2,
                           cursorColor: Colors.black,
-                          style: TextStyle(
+                          style: const TextStyle(
                               textBaseline: TextBaseline.alphabetic,
                               fontSize: 18,
                               color: Colors.black,
@@ -125,7 +122,7 @@ class VerificationScreen extends StatelessWidget {
                           cursorHeight: 25,
                           cursorWidth: 2,
                           cursorColor: Colors.black,
-                          style: TextStyle(
+                          style: const TextStyle(
                               textBaseline: TextBaseline.alphabetic,
                               fontSize: 18,
                               color: Colors.black,
@@ -159,7 +156,7 @@ class VerificationScreen extends StatelessWidget {
                           cursorHeight: 25,
                           cursorColor: Colors.black,
                           cursorWidth: 2,
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontSize: 18,
                               color: Colors.black,
                               fontWeight: FontWeight.w400),
@@ -192,7 +189,7 @@ class VerificationScreen extends StatelessWidget {
                           cursorHeight: 25,
                           cursorColor: Colors.black,
                           cursorWidth: 2,
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontSize: 18,
                               color: Colors.black,
                               fontWeight: FontWeight.w400),
@@ -211,7 +208,7 @@ class VerificationScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 40,
                 ),
                 Column(
@@ -221,42 +218,42 @@ class VerificationScreen extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => RegisterPage(),
+                              builder: (context) => const RegisterPage(),
                             ));
                       },
-                      child: Text(
-                        'Verify',
-                        style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w400),
-                      ),
                       style: ElevatedButton.styleFrom(
-                        fixedSize: Size(300, 50),
-                        backgroundColor: Color(0xff7D4292),
+                        fixedSize: const Size(300, 50),
+                        backgroundColor: const Color(0xff7D4292),
                         elevation: 10,
                         alignment: Alignment.center,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30),
                         ),
                       ),
+                      child: const Text(
+                        'Verify',
+                        style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w400),
+                      ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
-                    Text(
+                    const Text(
                       'Trouble receving code?',
                       style: TextStyle(
                           fontSize: 17,
                           color: Colors.white,
                           fontWeight: FontWeight.w400),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     TextButton(
                       onPressed: () {},
-                      child: Text(
+                      child: const Text(
                         'RESEND OTP',
                         style: TextStyle(
                             fontSize: 17,
@@ -264,17 +261,17 @@ class VerificationScreen extends StatelessWidget {
                             fontWeight: FontWeight.w500),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 150,
                     ),
-                    Text(
+                    const Text(
                       'By continusing to our',
                       style: TextStyle(
                           fontSize: 13,
                           color: Colors.white,
                           fontWeight: FontWeight.w400),
                     ),
-                    Text(
+                    const Text(
                       'Terms of use & privecy policy',
                       style: TextStyle(
                           fontSize: 18,

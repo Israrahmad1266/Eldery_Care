@@ -1,7 +1,10 @@
 import 'dart:async';
 
-import 'package:doctor_project/Home_Page/home_page.dart';
+import 'package:doctor_project/HomePage%20Menu/home_menu.dart';
+import 'package:doctor_project/Home_Page/login_page.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -10,19 +13,29 @@ class SplashScreen extends StatefulWidget {
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
+String? phoneNumber;
+
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
+    getValidatorData().whenComplete(() async {
+      Timer(const Duration(seconds: 3), () {
+        Get.to(phoneNumber == null ? LoginScreen() : const HomeMenu());
+      });
+    });
+
     super.initState();
-    Timer(
-      Duration(seconds: 3),
-      () => Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => LoginScreen(),
-        ),
-      ),
-    );
+  }
+
+  Future getValidatorData() async {
+    final SharedPreferences sharedPreferences =
+        await SharedPreferences.getInstance();
+
+    var phoneNumberValidetor = sharedPreferences.getString('_controller');
+
+    setState(() {
+      phoneNumber = phoneNumberValidetor;
+    });
   }
 
   @override

@@ -1,6 +1,10 @@
 import 'package:doctor_project/Register%20Page/register_page.dart';
 import 'package:doctor_project/majer%20color/color.dart';
+import 'package:doctor_project/screen/daily_needs_page.dart';
+import 'package:doctor_project/screen/grooming_page.dart';
+import 'package:doctor_project/screen/medical_aid%20page.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ServicesAll2 extends StatelessWidget {
   const ServicesAll2({super.key});
@@ -17,10 +21,7 @@ class ServicesAll2 extends StatelessWidget {
               children: [
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => RegisterPage()));
+                    Get.to(const MedicalNeeds());
                   },
                   child: Container(
                     decoration: BoxDecoration(
@@ -36,7 +37,7 @@ class ServicesAll2 extends StatelessWidget {
                           'assets/images/doctor.png',
                           height: 110,
                         ),
-                        Text(
+                        const Text(
                           'Medial Aid',
                           style: TextStyle(fontSize: 20, color: Colors.white),
                         )
@@ -44,11 +45,13 @@ class ServicesAll2 extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 30,
                 ),
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Get.to(const DailyNeeds());
+                  },
                   child: Container(
                     decoration: BoxDecoration(
                       color: tile1,
@@ -77,7 +80,7 @@ class ServicesAll2 extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Row(
@@ -91,6 +94,8 @@ class ServicesAll2 extends StatelessWidget {
                       color: tile1,
                       borderRadius: BorderRadius.circular(20),
                     ),
+                    height: 165,
+                    width: 165,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -107,14 +112,15 @@ class ServicesAll2 extends StatelessWidget {
                         )
                       ],
                     ),
-                    height: 165,
-                    width: 165,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 30,
                 ),
                 GestureDetector(
+                  onTap: (() {
+                    Get.to(const GroominNeeds());
+                  }),
                   child: Container(
                     decoration: BoxDecoration(
                       color: tile,

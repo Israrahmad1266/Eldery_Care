@@ -1,0 +1,309 @@
+// ignore_for_file: file_names
+
+import 'package:doctor_project/HomePage%20Menu/home_menu.dart';
+import 'package:doctor_project/majer%20color/color.dart';
+
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+class MedicalNeeds extends StatelessWidget {
+  const MedicalNeeds({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 70, horizontal: 20),
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  SizedBox(
+                    height: 40,
+                    child: FloatingActionButton(
+                      backgroundColor: tile3,
+                      onPressed: () {
+                        Get.to(const HomeMenu());
+                      },
+                      child: const Icon(Icons.arrow_back),
+                    ),
+                  ),
+                  Text(
+                    'Medical AID',
+                    style: TextStyle(fontSize: 20, color: tile3),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 50,
+              ),
+              Expanded(
+                child: GridView.count(
+                  padding: const EdgeInsets.all(20),
+                  mainAxisSpacing: 30,
+                  crossAxisSpacing: 20,
+                  crossAxisCount: 2,
+                  children: [
+                    InkWell(
+                      onTap: (() {
+                        showDialogs(context);
+                      }),
+                      child: Container(
+                          decoration: BoxDecoration(
+                            color: tile,
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image.asset(
+                                'assets/images/doctor visit.png',
+                                height: 120,
+                                alignment: Alignment.center,
+                              ),
+                              const Text(
+                                'Doctor Visit',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 20),
+                              ),
+                            ],
+                          )),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        showDialogs(context);
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: tile1,
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Image.asset(
+                              'assets/images/health-checkup.png',
+                              height: 120,
+                            ),
+                            Text(
+                              'Health Checkup',
+                              style: TextStyle(
+                                  color: tile,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        showDialogs(context);
+                      },
+                      child: Container(
+                          decoration: BoxDecoration(
+                            color: tile1,
+                            borderRadius: BorderRadius.circular(18),
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image.asset(
+                                'assets/images/blood-test.png',
+                                height: 120,
+                              ),
+                              Text(
+                                'Dignostic Test',
+                                style: TextStyle(
+                                    color: tile,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          )),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        showDialogs(context);
+                      },
+                      child: Container(
+                          decoration: BoxDecoration(
+                            color: tile,
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image.asset(
+                                'assets/images/medicine.png',
+                                height: 120,
+                              ),
+                              Text(
+                                'Medicine',
+                                style: TextStyle(
+                                    color: tile1,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          )),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        showDialogs(context);
+                      },
+                      child: Container(
+                          decoration: BoxDecoration(
+                            color: tile,
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image.asset(
+                                'assets/images/oxygen-.png',
+                                height: 120,
+                              ),
+                              Text(
+                                'Oxygen',
+                                style: TextStyle(
+                                    color: tile1,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          )),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        showDialogs(context);
+                      },
+                      child: Container(
+                          decoration: BoxDecoration(
+                            color: tile1,
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image.asset(
+                                'assets/images/physical-therapy-.png',
+                                height: 120,
+                              ),
+                              Text(
+                                'Health Checkup',
+                                style: TextStyle(
+                                    color: tile,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          )),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        showDialogs(context);
+                      },
+                      child: Container(
+                          decoration: BoxDecoration(
+                            color: tile1,
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image.asset(
+                                'assets/images/dietion.png',
+                                height: 120,
+                              ),
+                              Text(
+                                'Dietitian',
+                                style: TextStyle(
+                                    color: tile,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          )),
+                    ),
+                    InkWell(
+                      onTap: (() {
+                        showDialogs(context);
+                      }),
+                      child: Container(
+                          decoration: BoxDecoration(
+                            color: tile,
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image.asset(
+                                'assets/images/mental councling.png',
+                                height: 120,
+                              ),
+                              Text(
+                                'Mental Counselling',
+                                style: TextStyle(
+                                    color: tile1,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          )),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  void showDialogs(BuildContext context) {
+    var alertDialog = AlertDialog(
+      title: const Text('Are you sure want to submit?'),
+      backgroundColor: Colors.grey[300],
+      actions: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            ElevatedButton(
+              style: ButtonStyle(
+                shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                )),
+                backgroundColor: MaterialStateProperty.all(tile3),
+              ),
+              onPressed: () {},
+              child: const Text('Request Call Back'),
+            ),
+            ElevatedButton(
+              style: ButtonStyle(
+                shape: MaterialStateProperty.all(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+                backgroundColor: MaterialStateProperty.all(tile3),
+              ),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: const Text('Cancel'),
+            ),
+          ],
+        ),
+      ],
+    );
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return alertDialog;
+        });
+  }
+}

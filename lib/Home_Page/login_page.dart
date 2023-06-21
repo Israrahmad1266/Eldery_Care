@@ -1,5 +1,8 @@
-import 'package:doctor_project/otp_verificaton/otp_screen.dart';
+import 'package:doctor_project/HomePage%20Menu/home_menu.dart';
+
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginScreen extends StatelessWidget {
   final _controller = TextEditingController();
@@ -11,27 +14,27 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff24142e),
+      backgroundColor: const Color(0xff24142e),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Center(
               child: Container(
-                margin: EdgeInsets.only(top: 115),
+                margin: const EdgeInsets.only(top: 115),
                 child: Image.asset(
                   'assets/images/flash.png',
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
             Center(
               child: Container(
                 height: 100,
                 color: Colors.transparent,
-                padding: EdgeInsets.symmetric(horizontal: 40),
+                padding: const EdgeInsets.symmetric(horizontal: 40),
                 child: TextFormField(
                   cursorHeight: 25,
                   cursorColor: Colors.white,
@@ -39,13 +42,13 @@ class LoginScreen extends StatelessWidget {
                   controller: _controller,
                   decoration: InputDecoration(
                     hintText: 'Enter Mobile Number',
-                    hintStyle: TextStyle(
+                    hintStyle: const TextStyle(
                         fontWeight: FontWeight.w400,
                         color: Colors.white,
                         fontSize: 18),
                     hintMaxLines: 3,
                     prefixIcon: Padding(
-                      padding: EdgeInsets.all(20),
+                      padding: const EdgeInsets.all(20),
                       child: Image.asset(
                         'assets/images/flagin.png',
                         height: 30,
@@ -53,15 +56,15 @@ class LoginScreen extends StatelessWidget {
                     ),
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(30),
-                      borderSide: BorderSide(
-                        color: Color(0xfff8F3C80),
+                      borderSide: const BorderSide(
+                        color: Color(0xfff8f3c80),
                         width: 2,
                       ),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(30),
-                      borderSide: BorderSide(
-                        color: Color(0xfff8F3C80),
+                      borderSide: const BorderSide(
+                        color: Color(0xfff8f3c80),
                         width: 2,
                       ),
                     ),
@@ -71,33 +74,35 @@ class LoginScreen extends StatelessWidget {
             ),
             Center(
               child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => VerificationScreen()));
+                onPressed: () async {
+                  final SharedPreferences sharedPreferences =
+                      await SharedPreferences.getInstance();
+
+                  sharedPreferences.setString('_controller', _controller.text);
+
+                  Get.to(const HomeMenu());
                 },
-                child: Text(
-                  'Continue',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
-                ),
                 style: ElevatedButton.styleFrom(
                   alignment: Alignment.center,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30),
                   ),
-                  backgroundColor: Color(0xff7D4292),
-                  fixedSize: Size(340, 65),
+                  backgroundColor: const Color(0xff7D4292),
+                  fixedSize: const Size(340, 65),
+                ),
+                child: const Text(
+                  'Continue',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
+                const Text(
                   'I have an accont?',
                   style: TextStyle(
                       fontSize: 15,
@@ -106,24 +111,24 @@ class LoginScreen extends StatelessWidget {
                 ),
                 OutlinedButton(
                   onPressed: () {},
-                  child: Text(
+                  child: const Text(
                     'Login',
                     style: TextStyle(
                       fontSize: 17,
-                      color: Color(0xfff8F3C80),
+                      color: Color(0xfff8f3c80),
                       backgroundColor: Colors.transparent,
                     ),
                   ),
                 ),
               ],
             ),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(
+                SizedBox(
                   width: 180,
                   child: Divider(
-                    color: Color(0xfff8F3C80),
+                    color: Color(0xfff8f3c80),
                     height: 50,
                     thickness: 1.5,
                   ),
@@ -137,17 +142,17 @@ class LoginScreen extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                   ),
                 ),
-                Container(
+                SizedBox(
                   width: 160,
                   child: Divider(
-                    color: Color(0xfff8F3C80),
+                    color: Color(0xfff8f3c80),
                     height: 50,
                     thickness: 1.5,
                   ),
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Row(
@@ -159,10 +164,10 @@ class LoginScreen extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30),
                     ),
-                    fixedSize: Size(180, 0),
+                    fixedSize: const Size(180, 0),
                   ),
                   onPressed: () {},
-                  child: Text(
+                  child: const Text(
                     'Sign in with GOOGLE',
                     style: TextStyle(
                       color: Colors.white,
@@ -173,7 +178,7 @@ class LoginScreen extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Row(
@@ -185,10 +190,10 @@ class LoginScreen extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
                     border: Border.all(
-                      color: Color(0xfff8F3C80),
+                      color: const Color(0xfff8f3c80),
                       width: 1.5,
                     ),
-                    image: DecorationImage(
+                    image: const DecorationImage(
                       alignment: Alignment.centerLeft,
                       image: AssetImage(
                         'assets/images/google.png',
@@ -198,10 +203,10 @@ class LoginScreen extends StatelessWidget {
                   child: OutlinedButton(
                     style: OutlinedButton.styleFrom(
                       elevation: 0.0,
-                      fixedSize: Size(180, 0),
+                      fixedSize: const Size(180, 0),
                     ),
                     onPressed: () {},
-                    child: Text(
+                    child: const Text(
                       'Sign in with FACEBOOK',
                       style: TextStyle(
                         color: Colors.white,
